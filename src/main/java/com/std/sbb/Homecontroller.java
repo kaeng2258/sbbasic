@@ -1,9 +1,16 @@
 package com.std.sbb;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class Homecontroller {
@@ -53,4 +60,25 @@ public class Homecontroller {
         }
         return d;
     }
+
+    @GetMapping("/home/returnCar")
+    @ResponseBody
+    public Car ShowReturnCar(){
+        Car car = new Car(1,100,"KKK",new ArrayList(){{add(1);add(2);add(3);}});
+        car.setId(2);
+        car.setSpeed(200);
+        car.setName("EEE");
+        car.setIds(new ArrayList(){{add(4);add(5);add(6);}});
+        return car;
+    }
+}
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @Setter
+    class Car{
+    private int id;
+    private int speed;
+    private String name;
+    private List<Integer> ids;
 }
