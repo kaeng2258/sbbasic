@@ -71,6 +71,7 @@ public class Homecontroller {
         car.setIds(new ArrayList(){{add(4);add(5);add(6);}});
         return car;
     }
+
 }
     @AllArgsConstructor
     @NoArgsConstructor
